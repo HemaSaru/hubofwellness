@@ -1,0 +1,65 @@
+Steps to implement routing in this app (react-router-dom):
+
+1. Install router
+   - Run: npm install react-router-dom
+
+2. Wrap the app with BrowserRouter (src/main.jsx)
+   - Import:
+     - import { BrowserRouter } from 'react-router-dom'
+   - Wrap the root render:
+     - createRoot(document.getElementById('root')).render(
+         <BrowserRouter>
+           <App />
+         </BrowserRouter>
+       )
+
+3. Define all routes in App (src/App.jsx)
+   - Import:
+     - import { Routes, Route } from 'react-router-dom'
+     - Import each page component (Home, About, Therapies, Practitioners, Testimonials, Contact)
+   - Render:
+     - <Header />
+     - <main>
+         <Routes>
+           <Route path="/" element={<Home />} />
+           <Route path="/about" element={<About />} />
+           <Route path="/therapies" element={<Therapies />} />
+           <Route path="/practitioners" element={<Practitioners />} />
+           <Route path="/testimonials" element={<Testimonials />} />
+           <Route path="/contact" element={<Contact />} />
+           <Route path="/book" element={<BookSession />} />
+         </Routes>
+       </main>
+
+4. Create simple page components (src/components/Pages)
+   - Home.jsx, About.jsx, Therapies.jsx, Practitioners.jsx, Testimonials.jsx, Contact.jsx
+   - Each exports a default React component (e.g. function About() { return <section>...</section> })
+
+5. Use NavLink/Link in the header (src/components/Header.jsx)
+   - Import:
+     - import { Link, NavLink } from 'react-router-dom'
+   - Brand/logo:
+     - <Link to="/" className="header__brand">...</Link>
+   - Desktop nav:
+     - Map NAV_LINKS to:
+       - <NavLink
+           to={link.to}
+           end={link.to === '/'}
+           className={({ isActive }) =>
+             'header__nav-link ' + (isActive ? 'header__nav-link--active' : '')
+           }
+         >
+           {link.label}
+         </NavLink>
+   - Mobile nav:
+     - Same idea as desktop, but using mobile classes (header__mobile-link, etc.)
+   - CTA button:
+     - <Link to="/book" className="header__cta">Book a Session</Link>
+
+6. Ensure links close the mobile menu
+   - On each NavLink/Link inside the mobile menu, call onClick={() => setMobileMenuOpen(false)}
+
+7. Start the dev server
+   - Run: npm run dev
+   - Test each header link (and “Book a Session”) to confirm navigation works without full page reloads.
+

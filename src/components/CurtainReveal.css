@@ -1,0 +1,23 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+.curtain__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  will-change: transform;
+}
+
+.curtain__panel--top {
+  top: 0;
+}
+
+.curtain__panel--bottom {
+  bottom: 0;
+}
+
