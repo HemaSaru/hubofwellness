@@ -24,7 +24,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0.75rem 1.5rem;
+  padding: 0.25rem 1.5rem;
   gap: 1rem;
   box-sizing: border-box;
 }
@@ -107,18 +107,19 @@
 .header__nav-link {
   display: block;
   padding: 0.5rem 0.75rem;
-  font-size: 0.9rem;
+  font-size: 16px;
   font-weight: 500;
   font-family: Georgia, "Times New Roman", serif;
   color: #4a4a4a;
   text-decoration: none;
   border-radius: 6px;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.25s ease;
+  
 }
 
 .header__nav-link:hover {
-  color: #1a1a1a;
-  background: rgba(0, 0, 0, 0.04);
+  color: #9b7bbf;
+  transform: translateY(-2px);
 }
 
 .header__nav-link--active {

@@ -71,8 +71,8 @@ export default function Slider({ slides = DEFAULT_SLIDES }) {
 
   return (
     <div
-      className=" w-full h-screen overflow-hidden bg-[#b39cd1]"
-      onMouseEnter={() => setIsHovered(true)}
+      className=" w-full min-h-screen overflow-hidden bg-[#f8f5fb]"
+      onMouseEnter={() => setIsHovered(false)}
       onMouseLeave={() => setIsHovered(false)}
     >
 
@@ -220,7 +220,7 @@ export default function Slider({ slides = DEFAULT_SLIDES }) {
       <button
         onClick={goPrev}
         aria-label="Previous slide"
-        className="absolute left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white text-xl transition-all duration-200"
+        className="absolute cursor-pointer left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white text-xl transition-all duration-200"
       >
         ‹
       </button>
@@ -229,13 +229,13 @@ export default function Slider({ slides = DEFAULT_SLIDES }) {
       <button
         onClick={goNext}
         aria-label="Next slide"
-        className="absolute right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white text-xl transition-all duration-200"
+        className="absolute cursor-pointer right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white text-xl transition-all duration-200"
       >
         ›
       </button>
 
       {/* ── Dot indicators ── */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+      <div className="absolute  bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
         {slides.map((_, i) => (
           <button
             key={i}

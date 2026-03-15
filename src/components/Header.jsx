@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
+import siteLogo from "../assets/images/sitelogo.png";
 import "./Header.css";
+import SiteButton from "./buttons/SiteButton";
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
@@ -14,15 +16,31 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="header">
+    <header
+      className={[
+        "header py-[0px] ",
+        isScrolled
+          ? "fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg "
+          : "",
+      ].join(" ")}
+    >
       <div className="header__inner">
         <Link className="header__brand" to="/" onClick={() => setMobileMenuOpen(false)}>
-          <span className="header__logo-circle">H</span>
+          {/* <span className="header__logo-circle">H</span> */}
           <span className="header__brand-text">
-            <span className="header__title">Hub of Wellness</span>
-            <span className="header__tagline">The Centre for Holistic Harmony</span>
+            <img src={siteLogo} alt="Hub of Wellness" className="h-[80px] w-auto" />
+            {/* <span className="header__title">Hub of Wellness</span>
+            <span className="header__tagline">The Centre for Holistic Harmony</span> */}
           </span>
         </Link>
 
@@ -46,13 +64,7 @@ export default function Header() {
         </nav>
 
         <div className="header__actions">
-          <Link
-            to="/book"
-            className="header__cta"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Book a Session
-          </Link>
+          <SiteButton btnText={"Book a Session"}  btnHref={"/book"}  />
         </div>
 
         <button
