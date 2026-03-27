@@ -1,6 +1,8 @@
 import Slider from "../Slider";
 import WhoWeAre from "./HomeSections/WhoWeAre";
 import OurTherapies from "./HomeSections/OurTherapies";
+import CTASection from "./HomeSections/CTA";
+import CTASection2 from "./HomeSections/CTA2";
 
 const DEFAULT_SLIDES = [
   {
@@ -39,8 +41,9 @@ export default function Home() {
 
       <Slider slides={DEFAULT_SLIDES} />
 
-      <WhoWeAre/>
-      <OurTherapies/>
+      <WhoWeAre />
+      <OurTherapies />
+      <CTASection2 />
     </>
   );
 }

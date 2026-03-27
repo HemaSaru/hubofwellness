@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header
       className={[
-        "header py-[0px] ",
+        "header py-[0px]  ",
         isScrolled
           ? "fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg "
           : "",

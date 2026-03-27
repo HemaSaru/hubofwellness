@@ -1,8 +1,13 @@
+import WhoWeAreImg1 from "../../../assets/images/home/WhoWeAreImg1.jpg";
+import WhoWeAreImg2 from "../../../assets/images/home/WhoWeAreImg2.jpg";
+import WhoWeAreImg3 from "../../../assets/images/home/WhoWeAreImg3.jpg";
+import WhoWeAreImg4 from "../../../assets/images/home/WhoWeAreImg4.jpg";
+
 export default function WhoWeAre() {
   return (
-    <section className="w-full bg-[#f8f5fb] py-8 px-2 sm:px-4 lg:px-8 xl:px-12 ">
+    <section className="w-full bg-[#fcfcfd] py-8 px-2 sm:px-4 lg:px-8 xl:px-12 ">
       <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] items-center mb-20">
-        {/* Left: Copy */}
+        {/* Left */}
         <div className="space-y-8">
           <div className="space-y-3">
             <p className="text-s tracking-[0.2em] uppercase text-primary">
@@ -14,9 +19,9 @@ export default function WhoWeAre() {
             </h2>
 
             <p className="mt-6 para-font max-w-2xl">
-              At the Hub of Wellness, we unite healers from every discipline
-              — physical, mental, and spiritual — to create a vibrant
-              community dedicated to holistic well‑being.
+              At the Hub of Wellness, we unite healers from every discipline —
+              physical, mental, and spiritual — to create a vibrant community
+              dedicated to holistic well‑being.
             </p>
           </div>
 
@@ -74,11 +79,23 @@ export default function WhoWeAre() {
         </div>
 
         {/* Right: Decorative cards */}
-        <div className="grid grid-cols-2 gap-8 sm:gap-6 max-w-md mx-auto lg:mx-0">
-          <div className="h-28 sm:h-32 md:h-40 rounded-3xl bg-[#9b89b559] cursor-pointer  transition-all duration-500 hover:scale-105" />
-          <div className="h-68 sm:h-32 md:h-40 rounded-3xl bg-[#ffeef3] translate-y-4.5 cursor-pointer transition-all duration-300 hover:scale-105" />
-          <div className="h-28 sm:h-32 md:h-40 rounded-3xl bg-[#edf7f1] translate-y-4.2 cursor-pointer  transition-all duration-300 hover:scale-105" />
-          <div className="h-28 sm:h-32 md:h-40 rounded-3xl bg-[#fdf7ef] translate-y-3.5 cursor-pointer  transition-all duration-300 hover:scale-105" />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-sm sm:max-w-md mx-auto lg:mx-0">
+          <div className="h-40 sm:h-32 md:h-40 lg:h-48 rounded-3xl bg-[#9b89b559] overflow-hidden cursor-pointer transition-all duration-500 hover:scale-105">
+            <img src={WhoWeAreImg1} className="w-full h-full object-cover" />
+          </div>
+
+          <div className="h-40 sm:h-32 md:h-40 lg:h-48 rounded-3xl bg-[#ffeef3] sm:translate-y-5 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105">
+            <img src={WhoWeAreImg2} className="w-full h-full object-cover" />
+          </div>
+
+          <div className="h-40 sm:h-32 md:h-40 lg:h-48 rounded-3xl bg-[#edf7f1] sm:translate-y-5 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105">
+            <img src={WhoWeAreImg3} className="w-full h-full object-cover" />
+          </div>
+
+          <div className="h-40 sm:h-32 md:h-40 lg:h-48 rounded-3xl bg-[#fdf7ef] sm:translate-y-4 overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105">
+            <img src={WhoWeAreImg4} className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
     </section>

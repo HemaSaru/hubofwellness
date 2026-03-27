@@ -4,12 +4,11 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color:#b39cd1; /* thumb, track */
+  scrollbar-color: #b39cd1; /* thumb, track */
 }
 
 /* Works on Chrome, Edge, Safari */
@@ -22,13 +21,16 @@ body {
   background: linear-gradient(90deg, #b39cd1 0%, #8b6fa8 100%);
 }
 
-
 .text-primary {
   color: #8b6fa8;
   /* color: #b39cd1; */
 }
 
-.para-font{
+.para-font {
   font-size: 18px;
   color: #6e627f;
+}
+
+.bg-lavender-light {
+  background-color: #6e627f;
 }
