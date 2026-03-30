@@ -1,8 +1,8 @@
 import Slider from "../Slider";
 import WhoWeAre from "./HomeSections/WhoWeAre";
 import OurTherapies from "./HomeSections/OurTherapies";
-import CTASection from "./HomeSections/CTA";
 import CTASection2 from "./HomeSections/CTA2";
+import WhatClientsSay from "./HomeSections/WhatClientsSay";
 
 const DEFAULT_SLIDES = [
   {
@@ -37,13 +37,12 @@ const DEFAULT_SLIDES = [
 
 export default function Home() {
   return (
-    <>
-
+    <main className="w-full min-h-screen overflow-x-hidden flex flex-col">
       <Slider slides={DEFAULT_SLIDES} />
-
       <WhoWeAre />
       <OurTherapies />
       <CTASection2 />
-    </>
+      <WhatClientsSay />
+    </main>
   );
 }

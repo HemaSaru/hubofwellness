@@ -1,15 +1,15 @@
 import { useState } from "react";
-import PageLoader from "./components/PageLoader";
-import Header from "./components/Header";
-import CurtainReveal from "./components/CurtainReveal";
+import PageLoader from "./components/Effects/PageLoader";
+import Header from "./components/Header/Header";
+import CurtainReveal from "./components/Effects/CurtainReveal";
 import Home from "./components/Pages/Home";
 import About from "./components/Pages/About";
 import Therapies from "./components/Pages/Therapies";
 import Practitioners from "./components/Pages/Practitioners";
 import Testimonials from "./components/Pages/Testimonials";
 import Contact from "./components/Pages/Contact";
-// import BookSession from "./components/Pages/BookSession";
 import { Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [phase, setPhase] = useState("loading"); // loading -> reveal -> ready
@@ -35,6 +35,8 @@ function App() {
               {/* <Route path="/book" element={<BookSession />} /> */}
             </Routes>
           </main>
+
+          <Footer />
 
         </>
       )

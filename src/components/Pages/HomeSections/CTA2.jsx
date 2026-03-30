@@ -1,10 +1,11 @@
 import React from 'react';
 import { Check } from 'lucide-react';
+import SiteButton from '../../buttons/SiteButton';
 
 export default function CTASection2() {
     const healersPoints = [
         "Why Join",
-        "Collaboration Opportunities",
+        "Join us and share your unique healing services or products with a global audience. Whether you’re a physical therapist, mental health expert, or spiritual guide, this is your space to connect, inspire, and elevate lives worldwide. ",
         "Visibility",
         "Community Support"
     ];
@@ -59,18 +60,18 @@ export default function CTASection2() {
                                     What you'll find
                                 </h4>
                                 <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
-                                    {healersPoints.map((point, index) => (
+                                    {/* {healersPoints.map((point, index) => (
                                         <div key={`healer-${index}`} className="flex items-center gap-4">
                                             <div className="bg-[#8b6fa8] rounded-full p-0.5 shrink-0 flex items-center justify-center h-[20px] w-[20px]">
                                                 <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
                                             </div>
                                             <span className="text-[15px] text-gray-700 font-[600] leading-snug lg:whitespace-nowrap">{point}</span>
                                         </div>
-                                    ))}
+                                    ))} */}
+                                    <span className="text-[15px] text-gray-700 font-[600] leading-snug ">Join us and share your unique healing services or products with a global audience. Whether you’re a physical therapist, mental health expert, or spiritual guide, this is your space to connect, inspire, and elevate lives worldwide.</span>
                                 </div>
-                                <button className="bg-[#8b6fa8] hover:bg-[#6e627f] transition-colors text-white font-[800] py-3 px-8 rounded-full text-[15px] shadow-[0_4px_12px_rgba(139,111,168,0.25)] w-full sm:w-auto">
-                                    Join as a Healer
-                                </button>
+
+                                <SiteButton btnText={"Join as a Healer"} btnHref={"/"} />
                             </div>
                         </div>
                     </div>
@@ -108,9 +109,8 @@ export default function CTASection2() {
                                         </div>
                                     ))}
                                 </div>
-                                <button className="bg-[#8b6fa8] hover:bg-[#6e627f] transition-colors text-white font-[800] py-3 px-8 rounded-full text-[15px] shadow-[0_4px_12px_rgba(139,111,168,0.25)] w-full sm:w-auto">
-                                    Start Your Healing Journey
-                                </button>
+
+                                <SiteButton btnText={"Start Your Healing Journey"} btnHref={"/"} />
                             </div>
                         </div>
                     </div>

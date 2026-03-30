@@ -1,16 +1,4 @@
-// Slider.jsx — Option 3: Soft Purple Gradient Overlay
-// Full-page hero slider matching "Hub of Wellness" app style
-//
-// FONTS — add to index.html <head>:
-// <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400;1,600&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-//
-// USAGE in your page/route:
-// import Slider from './components/Slider'
-// export default function Home() { return <Slider /> }
-
 import { useState, useEffect } from "react";
-
-// ─── Slide data — swap with your own images & text ───────────────────────────
 
 const DEFAULT_SLIDES = [
   {
@@ -37,12 +25,12 @@ const DEFAULT_SLIDES = [
 
 // ─── Clip-path animation constants ───────────────────────────────────────────
 
-const CLIP_VISIBLE      = "inset(0 0 0 0)";
+const CLIP_VISIBLE = "inset(0 0 0 0)";
 const CLIP_HIDDEN_RIGHT = "inset(0 100% 0 0)";
-const CLIP_TEXT_HIDDEN  = "inset(0 0 0 100%)";
-const TRANSITION_SLIDE  = "clip-path 0.55s cubic-bezier(0.65, 0.05, 0.36, 1)";
-const TRANSITION_TAG    = "clip-path 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s";
-const TRANSITION_TITLE  = "clip-path 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) 0.55s";
+const CLIP_TEXT_HIDDEN = "inset(0 0 0 100%)";
+const TRANSITION_SLIDE = "clip-path 0.55s cubic-bezier(0.65, 0.05, 0.36, 1)";
+const TRANSITION_TAG = "clip-path 0.35s cubic-bezier(0.65, 0.05, 0.36, 1) 0.45s";
+const TRANSITION_TITLE = "clip-path 0.4s cubic-bezier(0.65, 0.05, 0.36, 1) 0.55s";
 
 
 // ─── Main Slider ──────────────────────────────────────────────────────────────
@@ -80,7 +68,7 @@ export default function Slider({ slides = DEFAULT_SLIDES }) {
       {slides.map((slide, i) => {
         const isActive = i === activeIndex;
         const isFuture = i > activeIndex;
-        const isPast   = i < activeIndex;
+        const isPast = i < activeIndex;
 
         return (
           <div
@@ -241,11 +229,10 @@ export default function Slider({ slides = DEFAULT_SLIDES }) {
             key={i}
             onClick={() => setActiveIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-[3px] rounded-full transition-all duration-300 ${
-              i === activeIndex
-                ? "w-8 bg-white"
-                : "w-2 bg-white/40 hover:bg-white/60"
-            }`}
+            className={`h-[3px] rounded-full transition-all duration-300 ${i === activeIndex
+              ? "w-8 bg-white"
+              : "w-2 bg-white/40 hover:bg-white/60"
+              }`}
           />
         ))}
       </div>
@@ -254,15 +241,3 @@ export default function Slider({ slides = DEFAULT_SLIDES }) {
   );
 }
 
-// ─── HOW TO USE ───────────────────────────────────────────────────────────────
-//
-// In your Home page / route:
-//   import Slider from './components/Slider'
-//   export default function Home() {
-//     return <Slider />
-//   }
-//
-// Custom slides:
-//   <Slider slides={[
-//     { img: "/your-photo.jpg", tag: "Your tagline here", title: "Your Title" },
-//   ]} />

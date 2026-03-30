@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
-import siteLogo from "../assets/images/sitelogo.png";
+import siteLogo from "../../assets/images/sitelogo.png";
 import "./Header.css";
-import SiteButton from "./buttons/SiteButton";
+import SiteButton from "../buttons/SiteButton";
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
@@ -30,6 +30,7 @@ export default function Header() {
       className={[
         "header py-[0px]  ",
         isScrolled
+          // ? "fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-lg border-b border-white/10"
           ? "fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg "
           : "",
       ].join(" ")}
@@ -64,7 +65,7 @@ export default function Header() {
         </nav>
 
         <div className="header__actions">
-          <SiteButton btnText={"Book a Session"}  btnHref={"/book"}  />
+          <SiteButton btnText={"Book a Session"} btnHref={"/book"} />
         </div>
 
         <button
@@ -76,9 +77,8 @@ export default function Header() {
           onClick={() => setMobileMenuOpen((prev) => !prev)}
         >
           <span
-            className={`header__hamburger ${
-              mobileMenuOpen ? "header__hamburger--open" : ""
-            }`}
+            className={`header__hamburger ${mobileMenuOpen ? "header__hamburger--open" : ""
+              }`}
           >
             <span className="header__hamburger-line" />
             <span className="header__hamburger-line" />
@@ -113,8 +113,7 @@ export default function Header() {
                     to={link.to}
                     end={link.to === "/"}
                     className={({ isActive }) =>
-                      `header__mobile-link ${
-                        isActive ? "header__mobile-link--active" : ""
+                      `header__mobile-link ${isActive ? "header__mobile-link--active" : ""
                       }`
                     }
                     onClick={() => setMobileMenuOpen(false)}
