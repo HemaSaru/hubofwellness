@@ -1,0 +1,24 @@
+=============== MVP =================
+
+1. navigating to different page, it should start from top of that page.
+
+2. need to work on Navigation bar, texts are not properly visible in some parts.
+
+3. Add "Go To Top" button in website.
+
+4. Slots Booking System. (for each particular healer)
+
+5. send email for customer support (website contact form)
+
+6. Payment Gateway Integration.
+
+7. connect on whatsapp for any query, call option
+
+
+
+
+========== Phase 2 =================
+
+1. admin panel to healers for adding their details, services, slots, etc.
+2. event hosting/calendar system for events.
+3. 

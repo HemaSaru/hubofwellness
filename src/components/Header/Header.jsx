@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Therapies", to: "/therapies" },
-  { label: "Practitioners", to: "/practitioners" },
+  { label: "Healers", to: "/practitioners" },
   { label: "Testimonials", to: "/testimonials" },
   { label: "Contact", to: "/contact" },
 ];

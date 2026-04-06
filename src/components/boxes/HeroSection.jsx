@@ -1,16 +1,33 @@
 export default function HeroSection({ title, subtitle, bgImg }) {
-    return (
+  return (
+    <div className="relative w-full h-[40vh] min-h-[350px] max-h-[500px] flex items-center justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      {bgImg && (
         <>
-            <div
-                className="w-full min-h-[450px] bg-[#f8f5fb] flex flex-col items-center justify-center bg-cover p-18bg-center"
-                style={{ backgroundImage: bgImg ? `linear-gradient(to right, rgba(34, 33, 35, 0.4) 0%, rgba(65, 60, 69, 0.25) 40%, transparent 75%), url(${bgImg})` : undefined }}
-            >
-                <div className="w-[800px] h-full flex flex-col items-center justify-center bg-black/40 p-18">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-[#ffff]">{title}</h1>
-
-                    <p className="text-lg mt-5  max-w-2xl text-[#ffff]">{subtitle}</p>
-                </div>
-            </div>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${bgImg})` }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
         </>
-    );
+      )}
+
+      {/* Fallback solid background if no image */}
+      {!bgImg && (
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2a1b42] to-[#4c3575]"></div>
+      )}
+
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 md:px-12 flex flex-col text-left py-12">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-4 tracking-tight drop-shadow-md">
+          {title}
+        </h1>
+        {subtitle && (
+          <p className="text-lg sm:text-xl text-white/90 max-w-2xl leading-relaxed drop-shadow-sm font-light">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    </div>
+  );
 }
